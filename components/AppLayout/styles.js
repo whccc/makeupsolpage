@@ -8,7 +8,7 @@ export const GlobalStyle=createGlobalStyle`
   }
   body {
     background: #f3f3f4;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', sans-serif;
   }
   :root{
     --bg-primary-blue:#3578E5;
@@ -20,13 +20,5 @@ export const GlobalStyle=createGlobalStyle`
     }
 `
 export const Container=styled.div`
-    min-height:100vh;
-    position:relative;
-    top:47px;
-    transition:all ease-in-out .5s;
-  @media (min-width:1024px){
- 
-  margin-left:200px;
-  width:calc(100% - 200px);
-  }
+   
 `

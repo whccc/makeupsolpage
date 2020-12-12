@@ -1,10 +1,15 @@
+import { Fragment } from 'react'
 import {Layout} from '../components/AppLayout'
+import {Banner} from '../components/Banner'
 const Index=()=>{
     return(
-        <Layout>
+        <Fragment>
             
-        <h1>Hello word</h1>
+        <Layout>   
+        <Banner/>
         </Layout>
+      
+        </Fragment>
     );
 }
 
