@@ -2,10 +2,11 @@ import styled,{css} from 'styled-components'
 
 
 export const MenuFlotante=styled.li`
+        z-index:1;
         position:absolute;
         left:0px;
         padding:15px;
-        top:${props=>props.ShowNav?'50px':'-400px'};
+        top:${props=>props.ShowNav?'90px':'-400px'};
         background-color:#fff;
         transition:all ease-in-out .5s;
         box-shadow: inset 0 0 0 1px #eaeaea,0 5px 20px rgba(0,0,0,.15)!important;

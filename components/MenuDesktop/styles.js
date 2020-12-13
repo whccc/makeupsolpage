@@ -1,21 +1,21 @@
-import styled from 'styled-components'
-
+import styled,{keyframes} from 'styled-components'
+import {ContainerCarousel} from '../Carousel/styles'
 export const ContainerMenu= styled.div`
             position: absolute;
-            width:200px;
-            height:350px;
+            height:0px;
             background-color:#fff;
-            top:60px;
+            top:65px;
             left:150px;
-            opacity:0;
-            transition:all ease-in-out .5s;
-            padding:10px;
-            border:1px solid #ddd;
+            z-index:0;
+           width:0px;
+           opacity:0;
+           overflow:hidden;
+            transition:width,opacity ease-in-out .1s;
             & a{
                 display:flex;
                 padding:3px;
                 &:hover{
-                    color:#ec3a99;
+                    color:var(--bg-primary);
                 }
                 svg{
                     font-size:19px;
@@ -35,24 +35,22 @@ export const ContainerSubMenu=styled.div`
             flex:1 1 auto;
             background-color:#fff;
             left:200px;
-            width:200px;
+            width:0px;
             height:350px;
-            overflow:auto;  
-              padding:10px;padding:10px;
             border:1px solid #ddd;
             top:-1px;
-            z-index:${props=>props.Active ? '1':'0'};
-            transition:all ease-in-out .3s;
+            opacity:0;
+            z-index:${props=>props.Active ? '3':'0'};
+            transition:width,opacity ease-in-out .3s;
            
 `
 export const ContainerEncabezadoMenu=styled.li`
             display:block;
             &:hover + div{
-                z-index:2;
+                z-index:3;
             }
          
 `
-
 export const Nav=styled.nav`
     width:100%;  
     display:flex;
@@ -67,7 +65,7 @@ export const Nav=styled.nav`
             font-size:20px;
             padding-left:20px;
             &:hover{
-                color:#ec3a99;
+                color:var(--bg-primary);
             }
             svg{
                 top:3px;
@@ -75,8 +73,23 @@ export const Nav=styled.nav`
             }
             cursor: pointer;
         } 
-        &:hover div{
-         opacity:1;
+        &:hover > div{
+            width:200px;
+            height:350px;
+            padding:10px;
+            overflow:visible;
+            border:1px solid #ddd;
+            z-index:2;
+            opacity:1;
+            & div{
+                width:200px;
+                height:350px;
+                padding:10px;
+                overflow:auto;  
+                opacity:1;
+            }
         } 
+       
     }         
 `
+

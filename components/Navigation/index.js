@@ -22,7 +22,7 @@ export const Navigation = () => {
             <Nav>
                 <ul>
                     <li>
-                        <img src="//cdn.shopify.com/s/files/1/0423/9153/5767/files/logo_300x300.png?v=1593731766" />
+                        <img src="/logo.png" />
                     </li>
                     { ShowResolution ? 
                         <NavigationMobil
@@ -32,6 +32,7 @@ export const Navigation = () => {
                     }
                     <SvgCart>
                         <MdAddShoppingCart />
+                        <span>0</span>
                     </SvgCart>
                     <SvgMobil onClick={() => { SetShowNav(!ShowNav) }}>
                         <MdDehaze />
