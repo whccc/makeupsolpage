@@ -11,7 +11,7 @@ export const Navigation = () => {
 
     useEffect(() => {
         window.innerWidth<=1024 ? SetShowResolution(true):SetShowResolution(false); 
-     
+     alert(window.innerWidth)
         const Resize = (e) => {
             window.innerWidth <= 1024 ? SetShowResolution(true):SetShowResolution(false); 
         }
