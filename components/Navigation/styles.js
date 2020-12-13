@@ -22,20 +22,21 @@ export const Nav = styled.nav`
             display:flex;
             align-items:center;
             img{
-                width:100px;
+                width:60px;
             }
         }
        
     }
     svg{
-        font-size:28px;
+        font-size:32px;
     }
 
     @media (min-width:1024px){
         &  li:nth-child(1){
             width:auto !important;
             img{
-                width:130px !important;
+                width:110px !important;
+                height:95px;
             }
         }
         & {
@@ -57,6 +58,29 @@ export const SvgCart=styled.li`
     display:flex;
     justify-content:center;
     align-items:center;
+    position: relative;
+    & span{
+        border:1px solid var(--bg-primary);
+        border-radius:50%;
+        height:18px;
+        width:18px;
+        bottom:20px;
+        font-size:15px;
+        right:0px;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        background-color:var(--bg-primary);
+        color:#ffff;
+        position: absolute;
+
+        @media (min-width:1024px){
+            & {
+                bottom:30px;
+            }
+
+        }
+    }
 `
 
     

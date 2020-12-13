@@ -14,9 +14,8 @@ export const GlobalStyle=createGlobalStyle`
     font-family: 'Roboto', sans-serif; 
   }
   :root{
-    --bg-primary-blue:#3578E5;
-    --bg-primary-tomato:tomato;
-    --bg-primary-verde:green;
+    --bg-primary:#ec3a99;
+    --bg-secundary:#ddd;
   }
   h1,h2,h3,h4,h5,h6{
     margin:0px;

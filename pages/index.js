@@ -1,12 +1,12 @@
 import { Fragment } from 'react'
 import {Layout} from '../components/AppLayout'
-import {Banner} from '../components/Banner'
+import {CompCarousel} from '../components/Carousel'
 const Index=()=>{
     return(
         <Fragment>
             
         <Layout>   
-        <Banner/>
+            <CompCarousel/>
         </Layout>
       
         </Fragment>
