@@ -17,7 +17,7 @@ export const Navigation = () => {
         }
         window.addEventListener("resize", Resize)
         return () => { window.removeEventListener("resize", Resize) }
-    }, [])
+    })
     return (
         <Fragment>
             <Nav>
