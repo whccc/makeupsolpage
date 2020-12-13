@@ -1,54 +1,42 @@
-import { Fragment } from "react";
+import React, { Fragment, useEffect, useState } from 'react'
+import { MdDehaze, MdAddShoppingCart } from 'react-icons/md'
+import { NavigationMobil } from '../MenuMobile'
+import { NavigationDesktop } from '../MenuDesktop'
+import { Nav, SvgMobil, SvgCart } from './styles'
 
-import Link from 'next/link'
 
 export const Navigation = () => {
+    const [ShowNav, SetShowNav] = useState(false);
+    const [ShowResolution, SetShowResolution] = useState(false);
+
+    useEffect(() => {
+        const Resize = (e) => {
+            window.innerWidth <= 1024 ? SetShowResolution(true):SetShowResolution(false); 
+        }
+        window.addEventListener("resize", Resize)
+        return () => { window.removeEventListener("resize", Resize) }
+    }, [])
     return (
         <Fragment>
-            <nav>
+            <Nav>
                 <ul>
                     <li>
-                        <Link href='/Productos'>
-                            <a>Productos</a>
-                        </Link>
-                        <ul>
-                            <li>
-                                <Link href="/Capilar">
-                                    <a>Capilar</a>
-                                </Link>
-                                <ul>
-                                    <li>
-                                        <Link href="/d">
-                                            <a>Casdsec</a>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href="/d">
-                                            <a>Caaae</a>
-                                        </Link>
-                                    </li>
-                                    <li>
-                                        <Link href="/d">
-                                            <a>Ccas</a>
-                                        </Link>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <Link href="/Capilar">
-                                    <a>Facial</a>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/Capilar">
-                                    <a>Corporal</a>
-                                </Link>
-                            </li>
-                        </ul>
+                        <img src="//cdn.shopify.com/s/files/1/0423/9153/5767/files/logo_300x300.png?v=1593731766" />
                     </li>
+                    { ShowResolution ? 
+                        <NavigationMobil
+                            ShowNav={ShowNav}
+                        /> : 
+                        <NavigationDesktop />
+                    }
+                    <SvgCart>
+                        <MdAddShoppingCart />
+                    </SvgCart>
+                    <SvgMobil onClick={() => { SetShowNav(!ShowNav) }}>
+                        <MdDehaze />
+                    </SvgMobil>
                 </ul>
-            </nav>
+            </Nav>
         </Fragment>
-
     );
 }
