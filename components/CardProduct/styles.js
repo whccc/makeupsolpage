@@ -54,6 +54,8 @@ export const Button=styled.button`
     transition:all ease-in-out .5s;
     &:hover{
         background-color:#000;
-        color:#fff;
+        a{
+            color:#fff;
+        }
     }
 `
