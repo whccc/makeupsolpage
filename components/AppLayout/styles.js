@@ -12,6 +12,8 @@ export const GlobalStyle=createGlobalStyle`
   body {
     background: #f3f3f4;
     font-family: 'Roboto', sans-serif; 
+    min-height:100vh;
+    position: relative;
   }
   :root{
     --bg-primary:#ec3a99;
@@ -24,9 +26,9 @@ export const GlobalStyle=createGlobalStyle`
     outline:none !important;
     }
     a{
-                text-decoration:none;
-                color:#000;
-            }
+      text-decoration:none;
+      color:#000;
+    }
 `
 export const Container=styled.div`
    

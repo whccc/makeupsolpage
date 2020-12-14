@@ -1,14 +1,35 @@
 import { Fragment } from 'react'
 import {Layout} from '../components/AppLayout'
-import {CompCarousel} from '../components/Carousel'
+import {CarouselBanner} from '../components/CarouselBanner'
+import {CarouselProducts} from '../components/CarouselProducts'
 const Index=()=>{
     return(
         <Fragment>
-            
         <Layout>   
-            <CompCarousel/>
+            <CarouselBanner/>
+
+            <section>
+                <h1>Productos</h1>
+                <CarouselProducts/>
+            </section>
+
+
         </Layout>
-      
+        <style jsx>{
+            `
+            section{
+                text-align:center;
+                padding:10px;
+                max-width:2000px;
+                margin:auto;
+            }
+            h1{
+                padding:20px;
+                font-size:30px;
+            }
+            `
+        }
+        </style>
         </Fragment>
     );
 }
