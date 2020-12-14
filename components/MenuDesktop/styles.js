@@ -1,5 +1,4 @@
-import styled,{keyframes} from 'styled-components'
-import {ContainerCarousel} from '../Carousel/styles'
+import styled from 'styled-components'
 export const ContainerMenu= styled.div`
             position: absolute;
             height:0px;

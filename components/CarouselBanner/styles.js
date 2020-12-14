@@ -15,8 +15,7 @@ z-index:-1;
       & li{
           margin:0px;
           & button:before{
-            color:var(--bg-primary);
-           
+            
             font-size:13px;
         
           }
@@ -25,19 +24,21 @@ z-index:-1;
 `
 
 export const Item=styled.div`
+    width:100%; 
     & img{
         width:100%;
         height:100%;
+        object-fit:cover;
+        max-height:250px;
     }
     @media (min-width:1024px){
-        width:100%;
-        max-height:550px;
         & img{
-            width:100%;
-            height:100%;
+            max-height:400px;
         }
     }
     @media (min-width:1424px){
-        max-height:750px;
+        & img{
+            max-height:500px;
+        }
     }
 `

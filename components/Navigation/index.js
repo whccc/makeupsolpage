@@ -3,20 +3,13 @@ import { MdDehaze, MdAddShoppingCart } from 'react-icons/md'
 import { NavigationMobil } from '../MenuMobile'
 import { NavigationDesktop } from '../MenuDesktop'
 import { Nav, SvgMobil, SvgCart } from './styles'
+import Resize from '../../hooks/resize'
 
 
 export const Navigation = () => {
     const [ShowNav, SetShowNav] = useState(false);
-    const [ShowResolution, SetShowResolution] = useState(false);
-
-    useEffect(() => {
-        window.innerWidth<=1024 ? SetShowResolution(true):SetShowResolution(false); 
-        const Resize = (e) => {
-            window.innerWidth <= 1024 ? SetShowResolution(true):SetShowResolution(false); 
-        }
-        window.addEventListener("resize", Resize)
-        return () => { window.removeEventListener("resize", Resize) }
-    })
+    const ShowResolution=Resize();
+    
     return (
         <Fragment>
             <Nav>

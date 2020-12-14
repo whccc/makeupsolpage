@@ -2,6 +2,7 @@ import { Fragment } from 'react';
 import {GlobalStyle,Container} from './styles'
 import {Navigation} from '../Navigation'
 import Head from 'next/head'
+import {Footer} from '../Footer'
 
 export const Layout=({children})=>{
     return (
@@ -17,6 +18,7 @@ export const Layout=({children})=>{
             <Container>
                 {children}
             </Container>
+            <Footer/>
        </Fragment>
     );
 }
