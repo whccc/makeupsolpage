@@ -4,6 +4,7 @@ import { NavigationMobil } from '../MenuMobile'
 import { NavigationDesktop } from '../MenuDesktop'
 import { Nav, SvgMobil, SvgCart } from './styles'
 import Resize from '../../hooks/resize'
+import Link from 'next/link'
 
 
 export const Navigation = () => {
@@ -15,7 +16,9 @@ export const Navigation = () => {
             <Nav>
                 <ul>
                     <li>
-                        <img src="/logo.png" />
+                        <Link href="/">
+                            <img src="/logo.jpeg" />
+                        </Link>
                     </li>
                     { ShowResolution ? 
                         <NavigationMobil

@@ -3,11 +3,11 @@ import styled from 'styled-components'
 
 export const Container=styled.footer`
     text-align:center;
-    margin-top:30px;
+    margin-top:10px;
     background-color:#eee;
     padding:10px;
-    position: absolute;
-    bottom:-150px;
+    position: relative;
+    bottom:0px;
     width:100%;
     & p{
         margin:5px;

@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { Fragment } from 'react'
 import {Layout} from '../components/AppLayout'
 import {CarouselBanner} from '../components/CarouselBanner'
@@ -12,8 +13,6 @@ const Index=()=>{
                 <h1>Productos</h1>
                 <CarouselProducts/>
             </section>
-
-
         </Layout>
         <style jsx>{
             `

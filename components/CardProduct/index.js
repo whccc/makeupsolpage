@@ -1,23 +1,27 @@
-import {ContainerProduct,ContainerImg,ContainerDescription,ContainerActions,Button} from './styles'
+import { ContainerProduct, ContainerImg, ContainerDescription, ContainerActions, Button } from './styles'
+import Link from 'next/link'
 
-
-const Buttons=({
+const Buttons = ({
     Text
-})=>{
+}) => {
 
     return (
-        <Button>{Text}</Button>
+        <Button>
+            <Link href="/producto/2323">
+                <a>{Text}</a>
+            </Link>
+        </Button>
     );
 
 }
 
-export const CardProduct=({
+export const CardProduct = ({
     Img
-})=>{
-    return(
+}) => {
+    return (
         <ContainerProduct>
             <ContainerImg>
-                <img src={Img}/>
+                <img src={Img} />
             </ContainerImg>
 
             <ContainerDescription>
@@ -29,9 +33,9 @@ export const CardProduct=({
                     $ 14.7000
                 </label>
             </ContainerDescription>
-                
+
             <ContainerActions>
-            <Buttons
+                <Buttons
                     Text="AGREGAR A LA BOLSA"
                 />
             </ContainerActions>

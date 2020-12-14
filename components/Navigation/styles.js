@@ -22,7 +22,8 @@ export const Nav = styled.nav`
             display:flex;
             align-items:center;
             img{
-                width:60px;
+                width:100px;
+                cursor: pointer;
             }
         }
        
@@ -35,8 +36,7 @@ export const Nav = styled.nav`
         &  li:nth-child(1){
             width:auto !important;
             img{
-                width:110px !important;
-                height:95px;
+                width:140px !important;
             }
         }
         & {
