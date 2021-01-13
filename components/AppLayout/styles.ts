@@ -1,8 +1,7 @@
-import styled,{createGlobalStyle} from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
 
-
-//Estilos globales
-export const GlobalStyle=createGlobalStyle`
+// Estilos globales
+export const GlobalStyle = createGlobalStyle`
   * {
     scroll-behavior: smooth;
     box-sizing: border-box;
@@ -30,9 +29,8 @@ export const GlobalStyle=createGlobalStyle`
       color:#000;
     }
 `
-export const Container=styled.div`
-
-@media (min-width:600px){
-  min-height:calc(100vh - 250px);
-}
+export const Container = styled.div`
+  @media (min-width: 600px) {
+    min-height: calc(100vh - 250px);
+  }
 `
