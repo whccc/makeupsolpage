@@ -12,9 +12,11 @@ export const ContainerMenu = styled.div`
   transition: width, opacity ease-in-out 0.1s;
   & a {
     display: flex;
+    position: relative;
     padding: 3px;
     &:hover {
-      color: var(--bg-primary);
+      color: #fff !important;
+      background-color: var(--bg-primary);
     }
     svg {
       font-size: 19px;
@@ -24,24 +26,28 @@ export const ContainerMenu = styled.div`
       right: 0px;
     }
   }
+  & > ul {
+    overflow: auto;
+    height: auto;
+  }
 `
 export const ContainerSubMenu = styled.div`
   position: absolute;
   flex: 1 1 auto;
   background-color: #fff;
-  left: 200px;
+  left: 198px;
   width: 0px;
-  height: 350px;
   border: 1px solid #ddd;
   top: -1px;
   opacity: 0;
-  z-index: ${props => (props.Active ? '3' : '0')};
+  z-index: ${props => (props.Active ? '4' : '0')};
   transition: width, opacity ease-in-out 0.3s;
 `
 export const ContainerEncabezadoMenu = styled.li`
   display: block;
-  &:hover + div {
-    z-index: 3;
+  padding: 5px;
+  &:hover {
+    background-color: var(--bg-primary);
   }
 `
 export const Nav = styled.nav`
@@ -49,6 +55,8 @@ export const Nav = styled.nav`
   display: flex;
   align-items: center;
   flex-direction: row;
+  cursor: pointer;
+
   & > li:nth-child(1) {
     & > a {
       display: flex;
@@ -59,6 +67,17 @@ export const Nav = styled.nav`
       padding-left: 20px;
       &:hover {
         color: var(--bg-primary);
+        & + div ul > li:nth-child(1) {
+          background-color: var(--bg-primary);
+          & > li {
+            & a {
+              color: #fff;
+            }
+          }
+          & > div {
+            z-index: 4;
+          }
+        }
       }
       svg {
         top: 3px;
@@ -68,18 +87,21 @@ export const Nav = styled.nav`
     }
     &:hover > div {
       width: 200px;
-      height: 350px;
-      padding: 10px;
+      height: auto;
       overflow: visible;
       border: 1px solid #ddd;
       z-index: 2;
       opacity: 1;
       & div {
         width: 200px;
-        height: 350px;
+        height: calc(100% + 2px);
         padding: 10px;
         overflow: auto;
         opacity: 1;
+        span {
+          text-align: center;
+          display: block;
+        }
       }
     }
   }

@@ -1,20 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { SubMenu, ContainerMenu, MenuFlotante } from './styles'
 import Link from 'next/link'
-import { MdKeyboardArrowDown, MdKeyboardArrowLeft } from 'react-icons/md'
 import { FaCaretSquareDown, FaCaretSquareLeft } from 'react-icons/fa'
 import useNavigetion from '../../hooks/useNavigation'
+import { IJsonNavigation } from '../../Interfaces'
 
-interface INFSubMenu {
-  _idCategory: string
-  strNameCategory: string
-  ArraySubCategory: Array<{
-    _idSubCategory: string
-    strNameSubCategory: string
-  }>
-}
-
-const SubMenus: React.FC<INFSubMenu> = ({
+const SubMenus: React.FC<IJsonNavigation> = ({
   _idCategory,
   strNameCategory,
   ArraySubCategory
@@ -23,7 +14,9 @@ const SubMenus: React.FC<INFSubMenu> = ({
   return (
     <li>
       <Link href="/">
-        <a>{strNameCategory}</a>
+        <a>
+          <strong>{strNameCategory}</strong>
+        </a>
       </Link>
       {ShowSubMenu ? (
         <FaCaretSquareDown
@@ -65,7 +58,7 @@ export const NavigationMobil: React.FC<Props> = ({ ShowNav }) => {
 
   return (
     <MenuFlotante ShowNav={ShowNav}>
-      <h3>Navegación</h3>
+      <h2>PRODUCTOS</h2>
       <ContainerMenu>
         {JsonNavegation.map((Element, Index) => {
           return <SubMenus key={Index} {...Element} />
