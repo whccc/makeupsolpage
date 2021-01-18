@@ -4,6 +4,7 @@ export const MenuFlotante = styled.li`
   position: absolute;
   left: 0px;
   padding: 15px;
+  z-index: 2;
   top: ${props => (props.ShowNav ? '90px' : '-400px')};
   background-color: #fff;
   transition: all ease-in-out 0.5s;
@@ -36,8 +37,10 @@ export const SubMenu = styled.ul`
   ${props =>
     props.ShowSubMenu &&
     css`
-      max-height: 500px;
+      max-height: 200px;
+      border: 1px solid #ddd;
+      background-color: #ddd;
     `}
-  overflow:hidden;
-  transition: all ease-in-out 1s;
+  overflow: auto;
+  transition: all ease-in-out 0.5s;
 `
