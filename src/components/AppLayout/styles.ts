@@ -7,10 +7,22 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     margin:0;
     padding:0;
+
   }
+  ::-webkit-scrollbar {
+    width: 8px;     /* Tamaño del scroll en vertical */
+    height: 8px;
+    display:none;    /* Ocultar scroll */
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+    height:10px;
+}
+
   body {
     background: #f3f3f4;
-    font-family: 'Roboto', sans-serif; 
+    font-family: 'Roboto', sans-serif;
     min-height:100vh;
     position: relative;
   }

@@ -5,7 +5,7 @@ export const MenuFlotante = styled.li`
   left: 0px;
   padding: 15px;
   z-index: 2;
-  top: ${props => (props.ShowNav ? '90px' : '-400px')};
+  top: ${props => (props.ShowNav ? '90px' : '-1000px')};
   background-color: #fff;
   transition: all ease-in-out 0.5s;
   box-shadow: inset 0 0 0 1px #eaeaea, 0 5px 20px rgba(0, 0, 0, 0.15) !important;
