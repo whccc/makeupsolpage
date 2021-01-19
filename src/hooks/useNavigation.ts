@@ -1,13 +1,13 @@
 import { useState } from 'react'
 import { URL_API } from '../VariablesDeEntorno'
 import axios from 'axios'
-import { IJsonNavigation } from '../../Interfaces'
+import { IJsonNavigation } from '../Interfaces'
 
 const useNavigation = (): {
   JsonNavegation: IJsonNavigation[]
   GetDataNavigation: () => Promise<void>
 } => {
-  const [JsonNavegation, setJsonNavegation] = useState<IJsonNavigation[]>([])
+  const [JsonNavegation, setJsonNavegation] = useState([])
 
   const GetDataNavigation = async () => {
     const Data = await axios.get(

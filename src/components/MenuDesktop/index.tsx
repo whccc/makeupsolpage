@@ -11,12 +11,11 @@ import useNavegation from '../../hooks/useNavigation'
 import { IJsonNavigation } from '../../Interfaces'
 
 const SubMenuNavegation: React.FC<IJsonNavigation> = ({
-  _idCategory,
   strNameCategory,
-  ArraySubCategory,
-  Index
+  ArraySubCategory
 }) => {
-  const [blnShowSubCategory, setBlnShowSubCategory] = useState(Index === 0)
+  const [blnShowSubCategory, setBlnShowSubCategory] = useState(false)
+
   return (
     <li>
       <ContainerEncabezadoMenu
@@ -30,14 +29,12 @@ const SubMenuNavegation: React.FC<IJsonNavigation> = ({
           background: blnShowSubCategory && 'var(--bg-primary)'
         }}
       >
-        <Link href="/">
-          <strong>
-            <a style={{ color: blnShowSubCategory && '#fff' }}>
-              {strNameCategory}
-              <MdKeyboardArrowRight />
-            </a>
-          </strong>
-        </Link>
+        <strong>
+          <a style={{ color: blnShowSubCategory && '#fff' }}>
+            {strNameCategory}
+            <MdKeyboardArrowRight />
+          </a>
+        </strong>
       </ContainerEncabezadoMenu>
       <ContainerSubMenu
         Active={blnShowSubCategory}
@@ -55,11 +52,14 @@ const SubMenuNavegation: React.FC<IJsonNavigation> = ({
           <hr />
           {ArraySubCategory.map((Element, Index) => {
             return (
-              <li key={Index}>
-                <Link href="/">
+              <Link
+                key={Index}
+                href={`/Productos/${Element.strNameSubCategory}/${Element._idSubCategory}`}
+              >
+                <li>
                   <a>{Element.strNameSubCategory}</a>
-                </Link>
-              </li>
+                </li>
+              </Link>
             )
           })}
         </ul>
@@ -84,9 +84,7 @@ export const NavigationDesktop: React.FC = () => {
         <ContainerMenu>
           <ul>
             {JsonNavegation.map((Element, Index) => {
-              return (
-                <SubMenuNavegation key={Index} Index={Index} {...Element} />
-              )
+              return <SubMenuNavegation key={Index} {...Element} />
             })}
           </ul>
         </ContainerMenu>

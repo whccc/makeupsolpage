@@ -19,9 +19,17 @@ const Buttons = ({ Text }) => {
 }
 interface Product {
   Img: string
+  strName: string
+  strPrice: bigint
+  strDescription: string
 }
 
-export const CardProduct: React.FC<Product> = ({ Img }) => {
+export const CardProduct: React.FC<Product> = ({
+  Img,
+  strName,
+  strPrice,
+  strDescription
+}) => {
   return (
     <ContainerProduct>
       <ContainerImg>
@@ -29,9 +37,9 @@ export const CardProduct: React.FC<Product> = ({ Img }) => {
       </ContainerImg>
 
       <ContainerDescription>
-        <h4>SAMY</h4>
-        <p>PALETA SOMBRAS SAMY HAVANA LIGHTS</p>
-        <label>$ 14.7000</label>
+        <h4>{strName}</h4>
+        <p>{strDescription}</p>
+        <label>$ {new Intl.NumberFormat('en-IN').format(strPrice)}</label>
       </ContainerDescription>
 
       <ContainerActions>
