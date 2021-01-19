@@ -18,6 +18,8 @@ export interface IJsonProduct {
 export interface IJsonCategory {
   _id: string
   strName: string
+  strIdCategory: string
+  strNameCategory: string
 }
 export interface IJsonSubCategory {
   _id: string

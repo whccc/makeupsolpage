@@ -1,10 +1,10 @@
 import React, { Fragment } from 'react'
 import { Category } from './styles'
-import { IArraySubCategory } from '../../Interfaces'
+import { IArrayCategory, IArraySubCategory } from '../../Interfaces'
 import Link from 'next/link'
-export const ContainerClasificationProduct: React.FC<IArraySubCategory> = ({
-  Data
-}) => {
+export const ContainerClasificationProduct: React.FC<
+  IArrayCategory | IArraySubCategory
+> = ({ Data }) => {
   return (
     <Fragment>
       {Data.map((Element, Index) => {
