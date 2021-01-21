@@ -8,17 +8,18 @@ import {
 import Link from 'next/link'
 import React from 'react'
 
-const Buttons = ({ Text }) => {
+const Buttons = ({ Text, IdProduct }) => {
   return (
-    <Button>
-      <Link href="/producto/2323">
+    <Link href={`/producto/${IdProduct}`}>
+      <Button>
         <a>{Text}</a>
-      </Link>
-    </Button>
+      </Button>
+    </Link>
   )
 }
 interface Product {
   Img: string
+  _id: string
   strName: string
   strPrice: bigint
   strDescription: string
@@ -26,6 +27,7 @@ interface Product {
 
 export const CardProduct: React.FC<Product> = ({
   Img,
+  _id,
   strName,
   strPrice,
   strDescription
@@ -43,7 +45,7 @@ export const CardProduct: React.FC<Product> = ({
       </ContainerDescription>
 
       <ContainerActions>
-        <Buttons Text="AGREGAR A LA BOLSA" />
+        <Buttons Text="AGREGAR A LA BOLSA" IdProduct={_id} />
       </ContainerActions>
     </ContainerProduct>
   )

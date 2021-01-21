@@ -1,9 +1,8 @@
 import React, { Fragment } from 'react'
-import { GlobalStyle, Container } from './styles'
+import { Container } from './styles'
 import { Navigation } from '../Navigation'
 import Head from 'next/head'
 import { Footer } from '../Footer'
-
 export const Layout: React.FC = ({ children }) => {
   return (
     <Fragment>
@@ -19,7 +18,6 @@ export const Layout: React.FC = ({ children }) => {
         />
         <title>Makessup</title>
       </Head>
-      <GlobalStyle />
       <Navigation />
       <Container>{children}</Container>
       <Footer />

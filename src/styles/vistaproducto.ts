@@ -13,15 +13,31 @@ export const ContainerVistaProducto = styled.section`
   margin-bottom: 20px;
   max-width: 1200px;
   text-align: center;
+
+  .slick-arrow.slick-next,
+  .slick-arrow.slick-prev {
+    display: none !important;
+  }
   & h1 {
     text-align: center;
     padding: 10px;
   }
+  & h2 {
+    background-color: var(--bg-primary);
+    color: #fff;
+    margin-bottom: 5px;
+  }
   @media (min-width: 1024px) {
     padding-left: 100px;
     padding-right: 100px;
-    box-shadow: 0px 0px 5px #000;
-
+    border: 1px solid #ddd;
+    .slick-arrow.slick-next,
+    .slick-arrow.slick-prev {
+      display: block !important;
+    }
+    .slick-next {
+      right: -20px;
+    }
     & > div > div {
       position: relative;
       display: flex;
@@ -60,6 +76,7 @@ export const ContainerData = styled.div`
     margin-bottom: 5px;
     width: 100px;
     height: 30px;
+    text-align: center;
   }
   button {
     height: 40px;
@@ -67,6 +84,7 @@ export const ContainerData = styled.div`
     background-color: #000;
     color: #fff;
     border: none;
+    cursor: pointer;
     &:hover {
       opacity: 0.8;
     }
