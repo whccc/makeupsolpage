@@ -5,10 +5,18 @@ import { IJsonProduct } from '../../../Interfaces'
 import { CardProduct } from '../../../components/CardProduct'
 import { NextPageContext } from 'next'
 import { Container, ContainerProducts } from '../../../styles/viewproducts'
+import { ErrorPage } from '../../../components/ErrorPage'
 interface IApiServerSideProps {
   Data: IJsonProduct[]
 }
 const ProductsBySubCategory: React.FC<IApiServerSideProps> = ({ Data }) => {
+  if (Data.length === 0) {
+    return (
+      <Layout>
+        <ErrorPage Text={'Productos no encontrados.'} />
+      </Layout>
+    )
+  }
   return (
     <Container>
       <Layout>

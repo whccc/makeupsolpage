@@ -1,3 +1,4 @@
+/* eslint prefer-regex-literals: ["error", {"disallowRedundantWrapping": false}] */
 export const ResponsiveCarousel = [
   {
     breakpoint: 1024,
@@ -23,3 +24,16 @@ export const ResponsiveCarousel = [
     }
   }
 ]
+
+export const FormateoNumber = (intNumber: bigint): string => {
+  const Number = new Intl.NumberFormat('en-IN').format(intNumber)
+  return Number
+}
+
+export const RegExpAloneNumber = (intNumber: string): boolean => {
+  const blnNumber = new RegExp(/[0-9]/)
+  if (blnNumber.test(intNumber)) {
+    return true
+  }
+  return false
+}

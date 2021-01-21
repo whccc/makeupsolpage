@@ -1,9 +1,11 @@
 import styled from 'styled-components'
 
 export const ContainerCarousel = styled.div`
-  .slick-arrow.slick-next,
-  .slick-arrow.slick-prev {
-    display: none !important;
+  .slick-slider.slick-initialized {
+    & button:before {
+      color: var(--bg-primary);
+      font-size: 25px;
+    }
   }
   .slick-dots {
     position: relative;

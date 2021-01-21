@@ -27,6 +27,7 @@ export const Nav = styled.nav`
   }
   svg {
     font-size: 32px;
+    cursor: pointer;
   }
 
   @media (min-width: 1024px) {
@@ -58,22 +59,24 @@ export const SvgCart = styled.li`
   position: relative;
   & span {
     border: 1px solid var(--bg-primary);
+    padding: 10px;
     border-radius: 50%;
     height: 18px;
     width: 18px;
-    bottom: 20px;
+    bottom: 13px;
     font-size: 15px;
-    right: 0px;
+    right: -2px;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: var(--bg-primary);
     color: #ffff;
     position: absolute;
+    cursor: pointer;
 
     @media (min-width: 1024px) {
       & {
-        bottom: 30px;
+        bottom: 25px;
       }
     }
   }

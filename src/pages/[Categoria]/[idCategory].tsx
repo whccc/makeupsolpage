@@ -9,8 +9,13 @@ import {
   Container,
   ContainerSubCategories
 } from '../../styles/viewsubcategories'
+import { ErrorPage } from '../../components/ErrorPage'
 interface IApiServiceSideProps {
-  DataSubCategories: { Success: true; Result: IJsonSubCategory[] }
+  DataSubCategories: {
+    Success: true
+    Result: IJsonSubCategory[]
+    length: number
+  }
   DataProduct: { Success: boolean; ArrayProducts: IJsonProduct[] }
 }
 
@@ -18,6 +23,13 @@ const SubCategoriesByCategory: React.FC<IApiServiceSideProps> = ({
   DataSubCategories,
   DataProduct
 }) => {
+  if (DataSubCategories.length === 0) {
+    return (
+      <Layout>
+        <ErrorPage Text={'Sub categorias no encontrada.'} />
+      </Layout>
+    )
+  }
   return (
     <Container>
       <Layout>
@@ -41,12 +53,18 @@ export async function getServerSideProps(
 ): Promise<{
   props: IApiServiceSideProps
 }> {
+  let DataInitial
   let Result = await fetch(
     `${URL_API}/subcategories/${Context.query.idCategory}`
   )
-  const DataInitial = await Result.json()
+  if (Result.status === 200) {
+    DataInitial = await Result.json()
+  } else {
+    DataInitial = []
+  }
   Result = await fetch(`${URL_API}/product/limit`)
   const DataInitialProducts = await Result.json()
+
   return {
     props: {
       DataSubCategories: DataInitial,

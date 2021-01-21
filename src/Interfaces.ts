@@ -14,6 +14,7 @@ export interface IJsonProduct {
   strIdSubCategory: string
   strDescription: string
   ArrayImages: Array<string>
+  length: number
 }
 export interface IJsonCategory {
   _id: string
@@ -41,4 +42,17 @@ export interface IArrayCategory {
 }
 export interface IArraySubCategory {
   Data: IJsonSubCategory[]
+}
+export interface IJsonLocalStorage {
+  strNameUser: string
+  strEmailUser: string
+  strPhoneUser: string
+  ArrayProducts: Array<[IProductCart]>
+}
+export interface IProductCart {
+  _id: string
+  strName: string
+  intQuantity?: number
+  strPrice: string
+  ArrayImages: []
 }
