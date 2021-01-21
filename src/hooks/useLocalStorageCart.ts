@@ -17,6 +17,20 @@ const useLocalStorageCart = (): {
     ArrayImages
   }: IProductCart) => void
   ValidateProductLocalStorage: ({ _id }) => void
+  UpdateQuantityProduct: ({
+    _id,
+    TypeOperation
+  }: {
+    _id: string
+    TypeOperation: string
+  }) => void
+  GetJsonLocalStorageCart: () => {
+    strEmailUser: string
+    strNameUser: string
+    strPhoneUser: string
+    ArrayProducts: Array<string>
+  }
+  RemovedJsonLocalStorageCart: () => void
 } => {
   const [JsonLocalStorageCart, setJsonLocalStorageCart] = useState(
     JsonLocalStorage
@@ -76,10 +90,41 @@ const useLocalStorageCart = (): {
     return blnAddProduct
   }
 
+  const UpdateQuantityProduct = ({ _id, TypeOperation }) => {
+    const Json = JSON.parse(localStorage.getItem('CartMakeupSol'))
+    for (let i = 0; i <= Json.ArrayProducts.length - 1; i++) {
+      if (Json.ArrayProducts[i]._id === _id) {
+        if (TypeOperation === 'Sum') {
+          Json.ArrayProducts[i].intQuantity =
+            Number.parseInt(Json.ArrayProducts[i].intQuantity) +
+            Number.parseInt('1')
+        } else {
+          if (Json.ArrayProducts[i].intQuantity === 1) {
+            return
+          }
+          Json.ArrayProducts[i].intQuantity =
+            Number.parseInt(Json.ArrayProducts[i].intQuantity) -
+            Number.parseInt('1')
+        }
+      }
+    }
+    localStorage.setItem('CartMakeupSol', JSON.stringify(Json))
+    setJsonLocalStorageCart(Json)
+  }
+  const GetJsonLocalStorageCart = () => {
+    return JSON.parse(localStorage.getItem('CartMakeupSol'))
+  }
+  const RemovedJsonLocalStorageCart = () => {
+    localStorage.removeItem('CartMakeupSol')
+    setJsonLocalStorageCart(JsonLocalStorage)
+  }
   return {
     JsonLocalStorageCart,
     AddProductsLocalStorage,
-    ValidateProductLocalStorage
+    ValidateProductLocalStorage,
+    UpdateQuantityProduct,
+    GetJsonLocalStorageCart,
+    RemovedJsonLocalStorageCart
   }
 }
 

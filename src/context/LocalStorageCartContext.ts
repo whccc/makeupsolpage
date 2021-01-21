@@ -19,6 +19,8 @@ interface IAddProductsLocalStorage {
     strPrice
   }: IProductCart) => void
   ValidateProductLocalStorage: ({ _id }) => void
+  UpdateQuantityProduct: ({ _id }) => void
+  RemovedJsonLocalStorageCart: () => void
 }
 
 const LocalStorageCartContext = React.createContext<

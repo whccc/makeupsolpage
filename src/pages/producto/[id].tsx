@@ -132,9 +132,7 @@ const Index: React.FC<{ Data: IJsonProduct }> = ({ Data }) => {
           <div>
             <h1>PRODUCTO {Data.strName}</h1>
             {blnProductInCart ? (
-              <h2>
-                El producto ya se encuentra agregado en el carrito de compras
-              </h2>
+              <h2>El producto se agrego al carrito de compras</h2>
             ) : (
               <h2>Agrega el producto</h2>
             )}

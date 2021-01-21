@@ -14,6 +14,7 @@ export const Container = styled.div`
     background-color: var(--bg-primary);
     border: none;
     color: #fff;
+    cursor: pointer;
     padding: 10px;
   }
 `

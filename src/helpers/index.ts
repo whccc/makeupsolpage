@@ -25,7 +25,7 @@ export const ResponsiveCarousel = [
   }
 ]
 
-export const FormateoNumber = (intNumber: bigint): string => {
+export const FormateoNumber = (intNumber: number): string => {
   const Number = new Intl.NumberFormat('en-IN').format(intNumber)
   return Number
 }
