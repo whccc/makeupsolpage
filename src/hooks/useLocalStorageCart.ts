@@ -22,7 +22,6 @@ const useLocalStorageCart = (): {
     JsonLocalStorage
   )
   useEffect(() => {
-    localStorage.removeItem('CartMakeupSol')
     CreateLocalStorageCart()
   }, [])
   const CreateLocalStorageCart = () => {
