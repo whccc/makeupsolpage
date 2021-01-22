@@ -9,7 +9,7 @@ export interface IJsonNavigation {
 export interface IJsonProduct {
   _id: string
   strName: string
-  strPrice: bigint
+  strPrice: number
   strIdCategory: string
   strIdSubCategory: string
   strDescription: string
@@ -53,6 +53,6 @@ export interface IProductCart {
   _id: string
   strName: string
   intQuantity?: number
-  strPrice: string
+  strPrice: number
   ArrayImages: []
 }
