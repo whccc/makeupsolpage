@@ -21,7 +21,7 @@ interface Product {
   Img: string
   _id: string
   strName: string
-  strPrice: bigint
+  strPrice: number
   strDescription: string
 }
 
