@@ -17,11 +17,15 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
     <>
       <GlobalStyle />
       <Head>
+        <link rel="manifest" href="/manifest/manifest.json" />
+        <meta name="theme-color" content="#000000" />
+        <meta name="apple-mobile-web-app-status-bar" content="#0000" />
         <link
           rel="apple-touch-icon"
           sizes="180x180"
           href="/manifest/apple-icon-120x120-dunplab-manifest-33222.png"
         />
+
         <link
           rel="icon"
           type="image/png"
@@ -40,9 +44,6 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
           sizes="96x96"
           href="/manifest/favicon-96x96-dunplab-manifest-33222"
         />
-        <link rel="manifest" href="/manifest/manifest.json" />
-        <meta name="msapplication-TileColor" content="#0000" />
-        <meta name="theme-color" content="#0000" />
 
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link

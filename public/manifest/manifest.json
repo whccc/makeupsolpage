@@ -11,6 +11,11 @@
   "orientation": "natural",
   "icons": [
     {
+      "src": "/manifest/icon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
       "src": "/manifest/android-icon-192x192-dunplab-manifest-33222.png",
       "type": "image/png",
       "sizes": "192x192"
@@ -74,6 +79,12 @@
       "src": "/manifest/favicon-16x16-dunplab-manifest-33222.png",
       "type": "image/png",
       "sizes": "16x16"
+    },
+    {
+      "src": "/manifest/maskable_icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ],
   "prefer_related_applications": "false"
